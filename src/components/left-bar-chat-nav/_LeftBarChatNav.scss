@@ -1,0 +1,17 @@
+@import '../../index';
+
+.left-bar-chat-nav-ul__li {
+    cursor: pointer;
+}
+
+.left-bar-chat-nav-ul__li:first-child {
+    margin-right: 10px;
+}
+
+.left-bar-chat-nav-ul__li:nth-child(2) {
+    margin-right: 50px;
+}
+
+.left-bar-chat-nav-ul__li:nth-child(3) {
+    margin-right: 90px;
+}

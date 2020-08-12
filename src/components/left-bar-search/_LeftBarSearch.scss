@@ -1,0 +1,23 @@
+@import '../../index';
+
+.left-bar-search__input {
+    width: 100%;
+    padding: 4px 15px 4px 30px;
+    background: transparent;
+    outline-style: none;
+    border: 1px solid $dark;
+    border-radius: 2px;
+    color: $darkGrey;
+}
+
+.left-bar-input {
+    position: relative;
+}
+
+.left-bar-search__span {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-left: 8px;
+}

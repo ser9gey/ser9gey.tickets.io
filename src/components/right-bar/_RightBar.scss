@@ -1,0 +1,14 @@
+@import '../../index';
+
+.right-bar {
+    background: $chatbg;
+    position: relative;
+    width: 66%;
+    margin-left: 20px;
+    min-height: 849px;
+}
+
+.right-bar__no-tickets {
+    color: $dark;
+    font-weight: 600;
+}

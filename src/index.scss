@@ -11,3 +11,25 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+*, *::after, *::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+
+/*Variables*/
+$mainBg: rgb(240, 246, 255);
+$darkBgHeader: #202020;
+$hrSlateBlue: rgb(105, 32, 221);
+$dark: #747373;
+$darkGrey: #b4b4b4;
+$white: #fff;
+$fs: 24px;
+$chatbg: #615e5e81;
+$lineLi: #111;
+$chatcard: rgb(49, 49, 49);
+$cardBg: rgba(109, 109, 109, 0.692);
+
+

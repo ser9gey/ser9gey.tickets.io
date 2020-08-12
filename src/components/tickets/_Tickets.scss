@@ -1,0 +1,60 @@
+@import '../../index';
+
+.right-bar__tickets {
+    margin: 15px;
+}
+
+.right-bar__tickets-title {
+    display: flex;
+    justify-content: space-between;
+    color: $dark;
+    font-weight: 600;
+}
+
+.right-bar__item-title {
+    color: $white;
+    font-weight: 600;
+}
+
+.right-bar__tickets-owner-main {
+    display: flex;
+    padding: 15px 0px 15px 25px;
+}
+
+.right-bar__tickets_card {
+    border: 2px solid $chatcard;
+    margin-top: 15px;
+}
+
+.right-bar__item-title {
+    background: $chatcard;
+    padding: 4px 0px 7px 15px;  
+}
+
+.right-bar__item-wrapp {
+    min-height: 240px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 30px;
+}
+
+.right-bar__item-p {
+    color: $dark;
+}
+
+.right-bar__item-div {
+    margin-bottom: 25px;
+}
+
+.right-bar__item-border {
+    border: 1px solid black;
+    padding: 5px 18px;
+    border-radius: 3px;
+    margin-top: 5px;
+    display: inline-block;
+}
+
+.right-bar__item-border_right {
+    margin-right: 6px;
+}

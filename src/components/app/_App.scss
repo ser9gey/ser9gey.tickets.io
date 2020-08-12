@@ -1,0 +1,16 @@
+@import '../../index';
+
+.app {
+    background: $mainBg;
+    color: $darkGrey;
+}
+
+.app-wrapper {
+    margin: 0 auto;
+    max-width: 1400px;
+    background: #202020;
+}
+
+.app-container {
+    padding: 15px 10px;
+}

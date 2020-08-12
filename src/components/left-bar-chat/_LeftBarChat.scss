@@ -1,0 +1,29 @@
+@import '../../index';
+
+.left-bar-chat {
+    margin-top: 15px;
+    background: $chatbg;
+}
+
+.left-bar-chat-nav {
+    padding: 15px 25px 0px 25px;
+}
+
+.left-bar-chat-nav-ul {
+    display: flex;
+    list-style: none;
+    color: $dark;
+    font-weight: 600;
+    padding-bottom: 15px;
+    border-bottom: 1px solid $lineLi;
+}
+
+.left-bar-chat-users {
+    height: 757px;
+    overflow-y: auto;
+}
+
+.left-bar-chat-users_checkedBg {
+    background: $cardBg;
+    border-left: 4px solid $hrSlateBlue !important;
+}

@@ -1,0 +1,15 @@
+@import '../../index';
+
+.app-header-wrapper__h1 {
+    color: $darkGrey;
+    font-size: $fs;
+    font-weight: 600;
+    margin-left: 5px;
+}
+
+.app-header-wrapper__line {
+    background: $hrSlateBlue;
+    width: 100%;
+    height: 4px;
+    margin-top: 5px;
+}

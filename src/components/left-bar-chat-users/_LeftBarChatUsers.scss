@@ -1,0 +1,37 @@
+@import '../../index';
+
+.left-bar-chat-users__users-wrapper {
+    border-left: 4px solid transparent;
+}
+
+.left-bar-chat-users__users-wrapper-profile {
+    border-bottom: 1px solid $lineLi;
+    margin: 0px 25px 0px 25px;
+    padding: 7px 0px 10px;
+    padding-bottom: 10px;
+    display: flex;
+    cursor: pointer;
+}
+
+.left-bar-chat-users__avatar {
+    width: 47px;
+    border-radius: 53%;
+}
+
+.left-bar-chat-users__reportedTime {
+    width: 105px;
+    margin-left: 16px;
+    overflow: hidden;
+}
+
+.left-bar-chat-users__assetName {
+    margin-left: 44px;
+    width: 50px;
+}
+
+.left-bar-chat-users__status {
+    width: 62px;
+    margin-left: 90px;
+    word-break: break-all;
+    text-align: center;
+}
