@@ -15,7 +15,7 @@ class LeftBarChatUsers extends Component {
         const leftBarDate = this.props.leftBarDate
         const usersLeftBar = leftBarDate.map((el) => {
         return  <div key={el.ticketId} className={className}>
-                    <div  className="left-bar-chat-users__users-wrapper-profile" onClick={() => {this.props.selectUsers()}}>
+                    <div  className="left-bar-chat-users__users-wrapper-profile" onClick={() => {this.props.selectUsers(el)}}>
                         <img className="left-bar-chat-users__avatar" src={el.owner.avatar} alt="" />
                         <p className="left-bar-chat-users__reportedTime">{el.reportedTime}</p>
                         <p className="left-bar-chat-users__assetName">{el.asset.name}</p>

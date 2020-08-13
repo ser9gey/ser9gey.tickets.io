@@ -25,13 +25,15 @@
 }
 
 .left-bar-chat-users__assetName {
-    margin-left: 44px;
+    margin-left: 28px;
     width: 50px;
 }
 
 .left-bar-chat-users__status {
     width: 62px;
-    margin-left: 90px;
+    margin-left: 69px;
     word-break: break-all;
     text-align: center;
+    border: 1px solid black;
+    padding: 0px 7px;
 }

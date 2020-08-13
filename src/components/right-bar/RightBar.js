@@ -9,7 +9,7 @@ class RightBar extends Component {
         return (
             <div className="right-bar">
             {
-                checkedUser ? <Tickets />  : <NoTickets /> 
+                checkedUser ? <Tickets currentItemDate={this.props.currentItemDate} />  : <NoTickets /> 
             }                    
             </div>
         )

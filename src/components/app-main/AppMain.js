@@ -23,6 +23,7 @@ class AppMain extends Component {
         ],
         checkedBg: false,
         checkedUser: false,
+        currentItemDate: null
     }
 
     componentDidMount() {
@@ -35,10 +36,11 @@ class AppMain extends Component {
         })
     }
 
-    selectUsers = () => {
+    selectUsers = (el) => {
         this.setState({
             checkedUser: !this.state.checkedUser,
-            checkedBg: !this.state.checkedBg
+            checkedBg: !this.state.checkedBg,
+            currentItemDate: el
         })
     }
 
@@ -51,11 +53,11 @@ class AppMain extends Component {
         const leftBarDate = this.state.users;
 
         /*Right Bar Date*/
-
+        const currentItemDate = this.state.currentItemDate;
         return (
             <div className="app-main">
                 <LeftBar leftBarDate={leftBarDate} checkedBg={checkedBg} selectUsers={this.selectUsers}/>
-                <RightBar  checkedUser={checkedUser}/>
+                <RightBar currentItemDate={currentItemDate}  checkedUser={checkedUser}/>
             </div>
         )
     }

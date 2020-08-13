@@ -3,23 +3,23 @@ import '../tickets/_Tickets.scss'
 
 class Tickets extends Component {
 
-    /* !!!доделать!!!! */
-
     render() {
+        const currentItemDate = this.props.currentItemDate;
+        
         return (
             <div className="right-bar__tickets">
                 <div className="right-bar__tickets-title">
-                    <span className="right-bar__ticket-no">TICKET NO.</span>
-                    <span className="right-bar__last-updated">LAST UPDATED</span>
+                    <span className="right-bar__ticket-no">TICKET NO. {currentItemDate.number}</span>
+                    <span className="right-bar__last-updated">LAST UPDATED {currentItemDate.lastUpdatedTime}</span>
                 </div>
 
                 <div className="right-bar__tickets-owner right-bar__tickets_card">
                     <div className="right-bar__item-title">Owner</div>
                     <div className="right-bar__tickets-owner-main">
-                        <img src='' />
+                        <img className="right-bar__tickets-owner-main-img" src={currentItemDate.owner.avatar} alt="" />
                         <div>
-                            <p className="right-bar__item-p">Clark Kent</p>
-                            <p className="right-bar__item-p">ELECTRICIAN</p>
+                            <p className="right-bar__item-p">{currentItemDate.owner.firstName}</p>
+                            <p className="right-bar__item-p">{currentItemDate.owner.lastName}</p>
                         </div>
                     </div>
                 </div>
@@ -29,15 +29,15 @@ class Tickets extends Component {
                     <div className="right-bar__item-wrapp">
                         <div className="right-bar__item-div">
                             <p className="right-bar__item-p">Reported</p>
-                            <span>???? 25/07/19 ?????</span>
+                            <span>{currentItemDate.reportedTime}</span>
                         </div>
                         <div className="right-bar__item-div">
                             <p className="right-bar__item-p">Status</p>
-                            <span className="right-bar__item-border">UNA</span>
+                            <span className="right-bar__item-border">{currentItemDate.status}</span>
                         </div>
                         <div>
                             <p className="right-bar__item-p">Description</p>
-                            <span>???? Ticket description ?????</span>
+                            <span>{currentItemDate.description}</span>
                         </div>
                     </div>
                 </div>
@@ -47,17 +47,17 @@ class Tickets extends Component {
                     <div className="right-bar__item-wrapp">
                         <div className="right-bar__item-div">
                             <p className="right-bar__item-p">Name</p>
-                            <span>???? Switch warming ?????</span>
+                            <span>{currentItemDate.asset.name}</span>
                         </div>
                         <div className="right-bar__item-div">
                             <p className="right-bar__item-p">GeoCode</p>
-                            <span>???? 137 ?????</span>
+                            <span>{currentItemDate.asset.geoCode}</span>
                         </div>
                         <div>
                             <p className="right-bar__item-p">Location</p>
                             <div>
-                                <span className="right-bar__item-border right-bar__item-border_right">2.900</span>
-                                <span className="right-bar__item-border">19.100</span>
+                                <span className="right-bar__item-border right-bar__item-border_right">{currentItemDate.asset.kmFrom}</span>
+                                <span className="right-bar__item-border">{currentItemDate.asset.kmTo}</span>
                             </div>
                         </div>
                     </div>
