@@ -8,7 +8,7 @@ class LeftBar extends Component {
         return (
             <div className="left-bar">
                 <LeftBarSearch />
-                <LeftBarChat leftBarDate={this.props.leftBarDate} checkedBg={this.props.checkedBg} selectUsers={this.props.selectUsers}/>
+                <LeftBarChat users={this.props.users} active={this.props.active} leftBarDate={this.props.leftBarDate} checkedBg={this.props.checkedBg} selectUsers={this.props.selectUsers}/>
             </div>
         )
     }

@@ -1,29 +1,18 @@
 import React, { Component, Fragment } from 'react'
 import '../left-bar-chat-users/_LeftBarChatUsers.scss'
+import LeftBarChatUsersItems from '../left-bar-chat-users-items/LeftBarChatUsersItems'
 
 
 class LeftBarChatUsers extends Component {
     
     render() {
         
-        let className = 'left-bar-chat-users__users-wrapper'
-        const checkedBg = this.props.checkedBg
-        if(checkedBg) {
-            className += ' left-bar-chat-users_checkedBg'
-        }
+        // const checkedBg = this.props.checkedBg
 
         const leftBarDate = this.props.leftBarDate
         const usersLeftBar = leftBarDate.map((el) => {
-        return  <div key={el.ticketId} className={className}>
-                    <div  className="left-bar-chat-users__users-wrapper-profile" onClick={() => {this.props.selectUsers(el)}}>
-                        <img className="left-bar-chat-users__avatar" src={el.owner.avatar} alt="" />
-                        <p className="left-bar-chat-users__reportedTime">{el.reportedTime}</p>
-                        <p className="left-bar-chat-users__assetName">{el.asset.name}</p>
-                        <span className="left-bar-chat-users__status">{el.status}</span>
-                    </div>
-                </div>
+            return <LeftBarChatUsersItems users={this.props.users} active={this.props.active} selectUsers={this.props.selectUsers} el={el} key={el.ticketId} />
         })
-
 
         return (
             <Fragment>
