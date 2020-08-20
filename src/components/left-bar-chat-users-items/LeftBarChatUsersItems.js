@@ -2,7 +2,6 @@ import React from 'react'
 
 class LeftBarChatUsersItems extends React.Component {
 
-
     render() {
         const {el, selectUsers, active, users} = this.props;
         
@@ -13,8 +12,6 @@ class LeftBarChatUsersItems extends React.Component {
             className = 'left-bar-chat-users__users-wrapper'
         }
     
-        
-        
         return (
             <div className={className} onClick={() => active(el.ticketId, users)} >
                 <div  className="left-bar-chat-users__users-wrapper-profile" onClick={() => selectUsers(el)}>

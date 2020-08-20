@@ -21,7 +21,7 @@ class AppMain extends Component {
         users: [
             
         ],
-        checkedUser: false,
+        checkedUser: null,
         currentItemDate: null
     }
 
@@ -44,7 +44,7 @@ class AppMain extends Component {
         let el;
         let newEl = [];
         for ( let i = 0; i < users.length; i++) {
-            if(users[i].ticketId === id) {
+            if(users[i].ticketId === id && users[i].checkedBg === false) {
                 el = users[i]
                 el.checkedBg = true
                 newEl.push(el)
@@ -76,7 +76,7 @@ class AppMain extends Component {
 
     selectUsers = (el) => {
         this.setState({
-            checkedUser: !this.state.checkedUser,
+            checkedUser: true,
             currentItemDate: el
         })
     }

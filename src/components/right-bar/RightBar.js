@@ -5,12 +5,18 @@ import Tickets from '../tickets/Tickets'
 
 class RightBar extends Component {
     render() {
-        const {checkedUser} = this.props;
+        const {checkedUser, currentItemDate} = this.props;
+        let tickets, noTickets;
+        if(checkedUser && currentItemDate.checkedBg) {
+            tickets = <Tickets currentItemDate={this.props.currentItemDate} />
+        } else {
+            noTickets =  <NoTickets />
+        }
         return (
             <div className="right-bar">
-            {
-                checkedUser ? <Tickets currentItemDate={this.props.currentItemDate} />  : <NoTickets /> 
-            }                    
+            
+            {tickets ? tickets : noTickets}
+                              
             </div>
         )
     }
