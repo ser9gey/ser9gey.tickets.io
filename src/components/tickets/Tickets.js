@@ -33,7 +33,7 @@ class Tickets extends Component {
                         </div>
                         <div className="right-bar__item-div">
                             <p className="right-bar__item-p">Status</p>
-                            <span className="right-bar__item-border">{currentItemDate.status}</span>
+                            <span className="right-bar__item-border">{currentItemDate.shortStatus}</span>
                         </div>
                         <div>
                             <p className="right-bar__item-p">Description</p>
