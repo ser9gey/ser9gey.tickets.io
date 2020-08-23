@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react'
 import '../left-bar-chat-users/_LeftBarChatUsers.scss'
 import LeftBarChatUsersItems from '../left-bar-chat-users-items/LeftBarChatUsersItems'
-import {Switch} from 'react-router-dom'
+import {Link} from 'react-router-dom'
 
 class LeftBarChatUsers extends Component {
     
@@ -11,9 +11,9 @@ class LeftBarChatUsers extends Component {
 
         const usersLeftBar = leftBarDate.map((el) => {
                 return (
-                    <Switch>
-                        <LeftBarChatUsersItems users={this.props.users} active={this.props.active} selectUsers={this.props.selectUsers} el={el} key={el.ticketId} />
-                    </Switch>
+                    <Link style={{color: "#b4b4b4", textDecoration: "none"}} key={el.ticketId} to={`/${el.ticketId}`}  >
+                        <LeftBarChatUsersItems users={this.props.users} active={this.props.active} selectUsers={this.props.selectUsers} el={el} />
+                    </Link>
                 )
         })
 
