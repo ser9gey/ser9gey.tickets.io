@@ -1,17 +1,21 @@
-import React, { Component } from 'react'
+import React from 'react'
 import '../left-bar/_LeftBar.scss'
 import LeftBarSearch from '../left-bar-search/LeftBarSearch'
 import LeftBarChat from '../left-bar-chat/LeftBarChat'
 
-class LeftBar extends Component {
-    render() {
-        return (
-            <div className="left-bar">
-                <LeftBarSearch />
-                <LeftBarChat users={this.props.users} active={this.props.active} leftBarDate={this.props.leftBarDate} checkedBg={this.props.checkedBg} selectUsers={this.props.selectUsers}/>
-            </div>
-        )
-    }
+const LeftBar = (props) => {
+    return (
+        <div className="left-bar">
+            <LeftBarSearch />
+            <LeftBarChat 
+                users={props.users} 
+                active={props.active} 
+                leftBarDate={props.leftBarDate} 
+                checkedBg={props.checkedBg} 
+                selectUsers={props.selectUsers}
+            />
+        </div>
+    )
 }
 
 export default LeftBar

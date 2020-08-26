@@ -1,14 +1,13 @@
-import React, { Component } from 'react'
+import React from 'react'
 import '../left-bar-chat-nav/_LeftBarChatNav.scss'
 
-class LeftBarChatNav extends Component {
-    render() {
-        return (
-            <li className="left-bar-chat-nav-ul__li">
-                {this.props.el.item}
-            </li>
-        )
-    }
+
+const LeftBarChatNav = (props) => {
+    return (
+        <li className="left-bar-chat-nav-ul__li">
+            {props.el.item}
+        </li>
+    )
 }
 
 export default LeftBarChatNav

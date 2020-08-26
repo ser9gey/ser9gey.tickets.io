@@ -9,8 +9,8 @@ class AppMain extends Component {
         users: [
             
         ],
-        checkedUser: null,
-        currentItemDate: null
+        checkedUser: false,
+        currentItemDate: {}
     }
 
     active = (id, users) => {
@@ -27,35 +27,33 @@ class AppMain extends Component {
                 newEl.push(el)
             }
         }
-        this.setState(({users}) => {
+        this.setState(() => {
             return {
                 users: newEl
             }
         })
     }
 
-    componentDidMount() {
-        axios.get(`https://raw.githubusercontent.com/Tapify/public-code-test/master/web-ui-test/tickets.json`)
-          .then((res) => {
-            const data = res.data;
-            data.map((el) => {
-                if(el.status === "assigned") {
-                    const checkedBg = el.checkedBg = false
-                    const shortStatus = el.shortStatus = "ASD" 
-                    return {checkedBg, shortStatus} 
-                } else if(el.status === "completed") {
-                    const checkedBg = el.checkedBg = false
-                    const shortStatus = el.shortStatus = "COM"
-                    return {checkedBg, shortStatus} 
-                } else {
-                    const checkedBg = el.checkedBg = false
-                    const shortStatus = el.shortStatus = "UNA"
-                    return {checkedBg, shortStatus} 
-                }
-            })
-            this.setState({
-                users: data
-            })
+    async componentDidMount() {
+        const res = await axios.get(`https://raw.githubusercontent.com/Tapify/public-code-test/master/web-ui-test/tickets.json`)
+        const data = res.data;
+        data.map((el) => {
+            if(el.status === "assigned") {
+                const checkedBg = el.checkedBg = false
+                const shortStatus = el.shortStatus = "ASD" 
+                return {checkedBg, shortStatus} 
+            } else if(el.status === "completed") {
+                const checkedBg = el.checkedBg = false
+                const shortStatus = el.shortStatus = "COM"
+                return {checkedBg, shortStatus} 
+            } else {
+                const checkedBg = el.checkedBg = false
+                const shortStatus = el.shortStatus = "UNA"
+                return {checkedBg, shortStatus} 
+            }
+        })
+        this.setState({
+            users: data
         })
     }
 
@@ -67,18 +65,24 @@ class AppMain extends Component {
     }
 
     render() {
-
-        const {checkedUser} = this.state;
+        /*Right Bar Date*/
+        const {checkedUser, currentItemDate} = this.state;
         
         /*Left Bar Date*/
         const leftBarDate = this.state.users;
 
-        /*Right Bar Date*/
-        const currentItemDate = this.state.currentItemDate;
         return (
             <div className="app-main">
-                <LeftBar users={this.state.users} active={this.active} leftBarDate={leftBarDate} selectUsers={this.selectUsers}/>
-                <RightBar currentItemDate={currentItemDate}  checkedUser={checkedUser}/>
+                <LeftBar 
+                    users={this.state.users} 
+                    active={this.active} 
+                    leftBarDate={leftBarDate} 
+                    selectUsers={this.selectUsers}    
+                />
+                <RightBar 
+                    currentItemDate={currentItemDate}
+                    checkedUser={checkedUser}
+                />
             </div>
         )
     }

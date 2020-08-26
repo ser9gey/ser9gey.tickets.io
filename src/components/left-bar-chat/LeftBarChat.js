@@ -28,7 +28,12 @@ class LeftBarChat extends Component {
                     </ul>
                 </div>
                 <div className="left-bar-chat-users">
-                    <LeftBarChatUsers users={this.props.users} active={this.props.active} leftBarDate={this.props.leftBarDate} selectUsers={this.props.selectUsers}/>
+                    <LeftBarChatUsers 
+                        users={this.props.users} 
+                        active={this.props.active} 
+                        leftBarDate={this.props.leftBarDate} 
+                        selectUsers={this.props.selectUsers}
+                    />
                 </div>
             </div>
         )

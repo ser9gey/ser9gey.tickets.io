@@ -1,29 +1,31 @@
-import React, { Component, Fragment } from 'react'
+import React from 'react'
 import '../left-bar-chat-users/_LeftBarChatUsers.scss'
 import LeftBarChatUsersItems from '../left-bar-chat-users-items/LeftBarChatUsersItems'
 import {Link} from 'react-router-dom'
 
-class LeftBarChatUsers extends Component {
-    
-    render() {
-        
-        const leftBarDate = this.props.leftBarDate
+const LeftBarChatUsers = (props) => {
+    const leftBarDate = props.leftBarDate
 
-        const usersLeftBar = leftBarDate.map((el) => {
-                return (
-                    <Link style={{color: "#b4b4b4", textDecoration: "none"}} key={el.ticketId} to={`/${el.ticketId}`}  >
-                        <LeftBarChatUsersItems users={this.props.users} active={this.props.active} selectUsers={this.props.selectUsers} el={el} />
-                    </Link>
-                )
-        })
-
+    const usersLeftBar = leftBarDate.map((el) => {
         return (
-            <Fragment>
-                { usersLeftBar }
-            </Fragment>
-            
+            <li key={el.ticketId} >
+                <Link to={`/ticket/${el.ticketId}`}  style={{color: "#b4b4b4", textDecoration: "none"}} >
+                    <LeftBarChatUsersItems 
+                        users={props.users} 
+                        active={props.active} 
+                        selectUsers={props.selectUsers} 
+                        el={el}
+                    />
+                </Link>
+            </li>
         )
-    }
+    })
+
+    return (
+        <ul>
+            { usersLeftBar }
+        </ul>      
+    )
 }
 
 export default LeftBarChatUsers

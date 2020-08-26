@@ -1,10 +1,8 @@
-import React, { Component } from 'react'
+import React from 'react'
 import '../tickets/_Tickets.scss'
 
-class Tickets extends Component {
-
-    render() {
-        const currentItemDate = this.props.currentItemDate;
+const Tickets = (props) => {
+    const currentItemDate = props.currentItemDate;
         
         return (
             <div className="right-bar__tickets">
@@ -64,7 +62,6 @@ class Tickets extends Component {
                 </div>
             </div>
         )
-    }
 }
 
 export default Tickets
